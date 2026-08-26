@@ -1,0 +1,369 @@
+* {
+  box-sizing: border-box;
+}
+
+.grow-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f1e7;
+
+  color: #542914;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  overflow-x: hidden;
+
+  padding: 8px 18px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   DECORATIVE PATTERN
+========================= */
+
+.grow-pattern,
+.grow-bottom-pattern {
+  width: 100%;
+
+  color: #a85b1e;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+}
+
+.grow-pattern {
+  margin-bottom: 8px;
+}
+
+.grow-bottom-pattern {
+  margin-top: 15px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.grow-logo {
+  text-align: center;
+}
+
+.grow-logo-icon {
+  font-size: 34px;
+
+  margin-bottom: 2px;
+}
+
+.grow-logo h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  color: #542914;
+}
+
+.grow-logo p {
+  margin: 4px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  color: #713714;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.grow-page h2 {
+  margin: 22px 0 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  line-height: 1.1;
+
+  color: #542914;
+}
+
+.grow-subtitle {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #5c4033;
+}
+
+/* =========================
+   ROBOT IMAGE
+========================= */
+
+.grow-image-container {
+  width: 100%;
+
+  max-width: 380px;
+
+  margin-top: 15px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.grow-image {
+  width: 100%;
+
+  max-width: 360px;
+
+  height: auto;
+
+  display: block;
+
+  border-radius: 16px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.grow-features {
+  width: 100%;
+
+  max-width: 380px;
+
+  margin-top: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.feature-card {
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  text-align: left;
+
+  padding: 8px 10px;
+
+  border-radius: 12px;
+
+  border: 1px solid #d7b27c;
+
+  gap: 10px;
+}
+
+/* Different beige shades */
+
+.pricing {
+  background: #edf5eb;
+}
+
+.festival {
+  background: #eee7f5;
+}
+
+.buyers {
+  background: #f7efd9;
+}
+
+.mentor {
+  background: #e9edf6;
+}
+
+/* =========================
+   FEATURE ICON
+========================= */
+
+.feature-icon {
+  width: 36px;
+
+  height: 36px;
+
+  min-width: 36px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  background: #ffffff;
+
+  border: 1px solid #d1ad76;
+
+  color: #713714;
+}
+
+/* =========================
+   FEATURE TEXT
+========================= */
+
+.feature-card h3 {
+  margin: 0 0 2px;
+
+  font-size: 13px;
+
+  color: #542914;
+}
+
+.feature-card p {
+  margin: 0;
+
+  font-size: 10px;
+
+  color: #5c4033;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.grow-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.grow-dots span {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #d6c1a3;
+}
+
+.grow-dots .active {
+  background: #713714;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.grow-start-button {
+  width: 100%;
+
+  max-width: 350px;
+
+  margin-top: 13px;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #713714;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.grow-start-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.grow-back-button {
+  margin-top: 9px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #713714;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .grow-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .grow-logo h1 {
+    font-size: 25px;
+  }
+
+  .grow-page h2 {
+    font-size: 27px;
+  }
+
+  .grow-subtitle {
+    font-size: 12px;
+  }
+
+  .grow-image {
+    max-width: 330px;
+  }
+
+  .feature-card {
+    min-height: 53px;
+  }
+
+  .feature-card h3 {
+    font-size: 12px;
+  }
+
+  .feature-card p {
+    font-size: 9px;
+  }
+}
