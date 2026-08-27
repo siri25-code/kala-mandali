@@ -1,22 +1,11 @@
 import "./growbusiness.css";
+import { useNavigate } from "react-router-dom";
 
-function GrowBusiness({ onNext, onBack }) {
+function GrowBusiness() {
+  const navigate = useNavigate();
+
   return (
     <div className="grow-page">
-
-      {/* Top decorative border */}
-      <div className="grow-pattern">
-        ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
-      </div>
-
-      {/* Logo */}
-      <div className="grow-logo">
-        <div className="grow-logo-icon">🏺</div>
-
-        <h1>Kala Mandali</h1>
-
-        <p>✦ Our Art.. Our Pride ✦</p>
-      </div>
 
       {/* Heading */}
       <h2>
@@ -33,17 +22,7 @@ function GrowBusiness({ onNext, onBack }) {
         insights, and business guidance.
       </p>
 
-      {/* Robot + Graph image */}
-      <div className="grow-image-container">
-        <img
-          src="/images/grow-business.png"
-          alt="AI powered business growth"
-          className="grow-image"
-        />
-      </div>
-
       {/* AI Features */}
-
       <div className="grow-features">
 
         <div className="feature-card pricing">
@@ -102,23 +81,10 @@ function GrowBusiness({ onNext, onBack }) {
       {/* Get Started */}
       <button
         className="grow-start-button"
-        onClick={onNext}
+        onClick={() => navigate("/artisan-login")}
       >
         Get Started
       </button>
-
-      {/* Back */}
-      <button
-        className="grow-back-button"
-        onClick={onBack}
-      >
-        ← Back
-      </button>
-
-      {/* Bottom decoration */}
-      <div className="grow-bottom-pattern">
-        ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
-      </div>
 
     </div>
   );

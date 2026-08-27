@@ -1,0 +1,102 @@
+.role-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f2eb;
+}
+
+.role-screen {
+  width: 375px;
+  min-height: 812px;
+  background: #f5f2eb;
+  padding: 30px 18px;
+  box-sizing: border-box;
+}
+
+.role-title {
+  text-align: center;
+  color: #b85a0d;
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.role-subtitle {
+  text-align: center;
+  color: #5c7a3a;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.role-card {
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-card:hover {
+  transform: translateY(-3px);
+}
+
+.artisan-card {
+  background: #fff7ee;
+  border: 2px solid #e6c39a;
+}
+
+.buyer-card {
+  background: #f7f2ea;
+  border: 2px solid #d8c2a3;
+}
+
+.role-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.role-content h2 {
+  margin: 0;
+  color: #5c7a3a;
+  font-size: 20px;
+}
+
+.role-content h1 {
+  margin: 5px 0;
+  color: #b85a0d;
+  font-size: 36px;
+}
+
+.role-content p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 150px;
+}
+
+
+.role-image {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  background: transparent;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .role-screen {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .role-image {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+}

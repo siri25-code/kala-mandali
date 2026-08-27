@@ -1,27 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./SmartCataloging.css";
 
 function SmartCataloging() {
+  const navigate = useNavigate()
   return (
     <div className="catalog-page">
 
-      {/* Top decorative border */}
-      <div className="top-border">
-        ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
-      </div>
+      
 
-      {/* Logo */}
-      <div className="brand">
-        <div className="brand-logo">🏺</div>
-
-        <h1>Kala Mandali</h1>
-
-        <p>✦ Our Art.. Our Pride ✦</p>
-
-        <div className="small-decoration">
-          ─── ◇ ───
-        </div>
-      </div>
+  
 
       {/* Heading */}
       <section className="catalog-content">
@@ -57,18 +45,11 @@ function SmartCataloging() {
         </div>
 
         {/* Step 2 */}
-        <div className="ai-section">
+       <h3>2. AI Analyzes</h3>
 
-          <div className="ai-circle">
-            <span>✿</span>
-            <strong>AI</strong>
-          </div>
+<div className="arrow">↓</div>
 
-          <h3>2. AI Analyzes</h3>
-
-          <div className="arrow">↓</div>
-
-        </div>
+        
 
         {/* Product result */}
         <div className="product-card">
@@ -106,27 +87,22 @@ function SmartCataloging() {
           <span></span>
         </div>
 
-        {/* Next button */}
-        <button className="next-button">
-          <span>Next</span>
-          <span className="next-arrow">→</span>
-        </button>
+<div className="button-section">
+  <button
+    className="next-button"
+    onClick={() => navigate("/grow-business")}
+  >
+    Next →
+  </button>
 
-        {/* Skip */}
-        <button className="skip-button">
-          Skip
-        </button>
+  <button className="skip-button">
+    Skip
+  </button>
+</div>
 
       </section>
 
-      {/* Bottom folk art */}
-      <div className="folk-art">
-        ♙ ♟ ♙  🐘  ♙ ♟ ♙  🌳  ♙ ♟ ♙  🐎  ♙ ♟ ♙
-      </div>
-
-      <div className="bottom-border">
-        ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆
-      </div>
+     
 
     </div>
   );

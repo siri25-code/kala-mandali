@@ -1,9 +1,10 @@
 * {
   box-sizing: border-box;
 }
-
 .grow-page {
-  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+
   min-height: 100vh;
 
   background: #f8f1e7;
@@ -19,8 +20,16 @@
   padding: 8px 18px 15px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
+  border-radius: 30px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
 }
 
 /* =========================
@@ -90,16 +99,20 @@
    HEADING
 ========================= */
 
-.grow-page h2 {
-  margin: 22px 0 8px;
-
-  font-family: Georgia, serif;
-
-  font-size: 30px;
-
-  line-height: 1.1;
-
+.grow-page {
+  width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #f8f1e7;
   color: #542914;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  padding: 8px 18px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .grow-subtitle {
@@ -281,51 +294,16 @@
 ========================= */
 
 .grow-start-button {
-  width: 100%;
-
-  max-width: 350px;
-
-  margin-top: 13px;
-
-  padding: 13px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background: #713714;
-
+  width: 200px;
+  height: 55px;
+  background: #c8701a;
   color: white;
-
-  font-size: 16px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.grow-start-button:active {
-  transform: scale(0.98);
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.grow-back-button {
-  margin-top: 9px;
-
   border: none;
-
-  background: transparent;
-
-  color: #713714;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
+  border-radius: 30px;
+  font-size: 24px;
   cursor: pointer;
+
+  margin-top: 30px;   /* moves button down */
 }
 
 /* =========================

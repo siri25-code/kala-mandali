@@ -2,16 +2,13 @@
   box-sizing: border-box;
 }
 
-.catalogue-page {
+.catalog-page {
+  width: 390px;
   min-height: 100vh;
+  margin: 0 auto;
   background: #f8f1e7;
-  color: #542914;
-  text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  overflow-x: hidden;
-  padding-bottom: 10px;
+  box-sizing: border-box;
 }
-
 /* TOP AND BOTTOM PATTERNS */
 
 .top-pattern,
@@ -122,11 +119,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 15px 0;
 }
 
 .ai-circle {
-  width: 72px;
-  height: 72px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: #f6dfbd;
   border: 2px solid #d8a86d;
@@ -141,11 +141,11 @@
 }
 
 .ai-circle span {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .ai-circle strong {
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .step-two h3 {
@@ -235,27 +235,15 @@
 /* NEXT */
 
 .next-button {
-  width: 400px;
-  max-width: 88%;
-
-  border: none;
-  border-radius: 13px;
-
-  padding: 15px 25px;
-
-  background: #713714;
+  width: 200px;
+  height: 55px;
+  background: #c8701a;
   color: white;
-
-  font-family: Arial, sans-serif;
-  font-size: 19px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+  border: none;
+  border-radius: 30px;
+  font-size: 24px;
   cursor: pointer;
 }
-
 .next-button:hover {
   background: #5d2c10;
 }
@@ -286,27 +274,15 @@
   color: #713714;
 
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
 
-  margin-top: 8px;
+  margin-top: 15px;
 
   cursor: pointer;
 }
 
-/* BOTTOM ART */
 
-.folk-pattern {
-  margin-top: 15px;
-
-  color: #9a4b16;
-
-  font-size: 23px;
-  letter-spacing: 3px;
-
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 /* MOBILE */
 
@@ -341,4 +317,47 @@
   .next-button {
     width: 90%;
   }
+}
+.catalog-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f5f0;
+}
+
+.catalog-content {
+  width: 100%;
+  max-width: 380px;   /* mobile width */
+  padding: 20px;
+  text-align: center;
+}
+.basket-image-box img,
+.product-card img {
+  width: 140px;
+  height: auto;
+}
+.catalog-page {
+  max-width: 400px;
+  margin: 20px auto;
+  background: #f8f1e7;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.skip-button {
+  background: none;
+  border: none;
+  color: #7a4314;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
 }
