@@ -1,0 +1,694 @@
+/* =========================================
+   KALA MANDALI - ADD PRODUCT
+========================================= */
+
+.kp-add-page {
+  min-height: 100vh;
+  background: #f8f1e5;
+  color: #3c2419;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 100px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.kp-add-header {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 45px;
+  background: #fffaf1;
+  border-bottom: 1px solid #e6d7c3;
+}
+
+.kp-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.kp-brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.kp-brand h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #542b1d;
+}
+
+.kp-brand p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #76513e;
+}
+
+.kp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kp-header-actions select {
+  border: 1px solid #a98267;
+  background: #fffaf4;
+  padding: 10px 15px;
+  border-radius: 22px;
+  color: #4d3024;
+}
+
+.kp-sound-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fffaf4;
+  border: 1px solid #a98267;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   LANGUAGE LABEL
+========================================= */
+
+.kp-language-label {
+  position: fixed;
+  left: 15px;
+  top: 180px;
+  background: #9e3d14;
+  color: white;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 25px 12px;
+  border-radius: 10px 10px 10px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 5;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.kp-progress {
+  max-width: 900px;
+  margin: 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.kp-progress > div:not(.kp-line) {
+  text-align: center;
+  min-width: 90px;
+}
+
+.kp-progress span {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3d5c4;
+  color: #775b49;
+  font-weight: bold;
+}
+
+.kp-progress p {
+  font-size: 12px;
+  margin: 7px 0;
+}
+
+.kp-progress .active span {
+  background: #1f7335;
+  color: white;
+}
+
+.kp-progress .active p {
+  color: #1f7335;
+  font-weight: bold;
+}
+
+.kp-line {
+  width: 80px;
+  height: 2px;
+  background: #d5c4b2;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.kp-add-main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.kp-step-container {
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.kp-step-container h1 {
+  font-family: Georgia, serif;
+  color: #542b1d;
+  margin-bottom: 8px;
+}
+
+.kp-subtitle {
+  color: #6f5646;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   STEP 1
+========================================= */
+
+.kp-upload-card {
+  margin-top: 30px;
+  background: #fffaf3;
+  border: 1px solid #e4d6c4;
+  border-radius: 18px;
+  padding: 45px 30px;
+  box-shadow: 0 4px 15px rgba(80, 50, 30, 0.08);
+}
+
+.kp-camera-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: auto;
+  background: #eadcc9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.kp-upload-card h2 {
+  margin: 15px 0 5px;
+}
+
+.kp-upload-card p {
+  color: #806a58;
+}
+
+.kp-gallery-button,
+.kp-camera-button {
+  display: block;
+  width: 250px;
+  margin: 12px auto;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.kp-gallery-button {
+  border: 1px solid #d2bfa9;
+  background: white;
+  color: #6d3522;
+}
+
+.kp-camera-button {
+  border: none;
+  background: #9e3d14;
+  color: white;
+}
+
+
+/* =========================================
+   TIP
+========================================= */
+
+.kp-tip-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff0d5;
+  color: #62472f;
+}
+
+.kp-tip-box p {
+  margin: 0;
+}
+
+
+/* =========================================
+   AI STUDIO
+========================================= */
+
+.kp-photo-comparison {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.kp-photo-box {
+  width: 260px;
+  background: #fffaf3;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #dfd0bf;
+}
+
+.kp-photo-box h3 {
+  font-size: 15px;
+}
+
+.kp-photo-box img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.kp-arrow {
+  font-size: 35px;
+  color: #a34819;
+}
+
+.kp-enhanced-wrapper {
+  position: relative;
+}
+
+.kp-enhanced-wrapper span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+}
+
+.kp-no-image {
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eadfce;
+  border-radius: 10px;
+  font-size: 60px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.kp-primary-button {
+  border: none;
+  background: #207337;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kp-primary-button:hover {
+  background: #175c2a;
+}
+
+.kp-secondary-button {
+  border: 1px solid #b9a48e;
+  background: white;
+  color: #5e4031;
+  padding: 13px 24px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.kp-details-card {
+  background: #fffaf3;
+  border: 1px solid #dfd0bf;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.kp-field {
+  margin-bottom: 20px;
+}
+
+.kp-field label,
+.kp-category-section > label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.kp-field label span {
+  color: #a56d3f;
+  font-size: 12px;
+}
+
+.kp-input-with-icon {
+  display: flex;
+  border: 1px solid #d2c0ad;
+  border-radius: 8px;
+  background: white;
+}
+
+.kp-input-with-icon input,
+.kp-input-with-icon textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 13px;
+  background: transparent;
+  font-size: 14px;
+  color: #3c2419;
+}
+
+.kp-input-with-icon textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.kp-input-with-icon button {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.kp-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.kp-category-grid button {
+  padding: 12px 8px;
+  border: 1px solid #dfd0bf;
+  border-radius: 9px;
+  background: white;
+  cursor: pointer;
+  color: #4d3427;
+}
+
+.kp-category-grid button span {
+  margin-right: 5px;
+}
+
+.kp-category-grid button.selected {
+  border: 2px solid #207337;
+  background: #e9f3e8;
+  color: #176329;
+}
+
+.kp-details-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+/* =========================================
+   PREVIEW
+========================================= */
+
+.kp-preview-card {
+  margin-top: 25px;
+  padding: 20px;
+  background: #fffaf3;
+  border: 1px solid #dfd0bf;
+  border-radius: 18px;
+  display: flex;
+  gap: 25px;
+  text-align: left;
+}
+
+.kp-preview-image {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.kp-preview-image img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.kp-preview-info {
+  padding-top: 10px;
+}
+
+.kp-preview-info h2 {
+  color: #542b1d;
+}
+
+.kp-preview-info p {
+  line-height: 1.7;
+  color: #5e5149;
+}
+
+.kp-preview-info h3 {
+  color: #207337;
+  font-size: 22px;
+}
+
+.kp-ai-badge {
+  display: inline-block;
+  background: #dcefd3;
+  color: #35712c;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.kp-preview-category strong {
+  margin-left: 8px;
+  background: #eadcc9;
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   VERIFIED
+========================================= */
+
+.kp-verified-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #e7f2df;
+  color: #27682e;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* =========================================
+   PUBLISH
+========================================= */
+
+.kp-publish-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 17px;
+  border: none;
+  border-radius: 9px;
+  background: #207337;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kp-publish-button:hover {
+  background: #175c2a;
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.kp-success-box {
+  margin-top: 20px;
+  padding: 25px;
+  background: #edf8e9;
+  border: 1px solid #b8d9aa;
+  border-radius: 15px;
+}
+
+.kp-success-box > div:first-child {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  background: #207337;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.kp-success-box h2 {
+  color: #27682e;
+}
+
+.kp-success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.kp-success-actions button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #207337;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.kp-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: #fffaf3;
+  border-top: 1px solid #ddcdbb;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  z-index: 20;
+}
+
+.kp-bottom-nav button {
+  border: none;
+  background: transparent;
+  color: #49372c;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.kp-bottom-nav button span {
+  font-size: 25px;
+}
+
+.kp-bottom-nav button small {
+  margin-top: 3px;
+}
+
+.kp-bottom-nav button.active {
+  color: #9e3d14;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .kp-add-header {
+    padding: 0 20px;
+  }
+
+  .kp-language-label {
+    display: none;
+  }
+
+  .kp-progress {
+    padding: 0 10px;
+    gap: 4px;
+  }
+
+  .kp-progress > div:not(.kp-line) {
+    min-width: 65px;
+  }
+
+  .kp-progress p {
+    font-size: 9px;
+  }
+
+  .kp-line {
+    width: 25px;
+  }
+
+  .kp-add-main {
+    padding: 0 15px;
+  }
+
+  .kp-photo-comparison {
+    flex-direction: column;
+  }
+
+  .kp-arrow {
+    transform: rotate(90deg);
+  }
+
+  .kp-preview-card {
+    flex-direction: column;
+  }
+
+  .kp-preview-image {
+    width: 100%;
+  }
+
+  .kp-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kp-details-actions {
+    flex-direction: column;
+  }
+
+  .kp-bottom-nav {
+    gap: 15px;
+    justify-content: space-around;
+  }
+
+}
