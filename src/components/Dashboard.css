@@ -1,0 +1,302 @@
+.dashboard {
+  min-height: 100vh;
+  background: #f7f0df;
+  color: #263b27;
+  font-family: Arial, sans-serif;
+  padding-bottom: 90px;
+}
+
+/* HEADER */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #f8f2e5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-placeholder {
+  font-size: 42px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 23px;
+  color: #613d20;
+}
+
+.brand p {
+  margin: 3px 0 0;
+  font-size: 14px;
+  color: #6d5a46;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.language-btn,
+.sound-btn {
+  border: 1px solid #8d806d;
+  background: transparent;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.sound-btn {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+}
+
+/* WELCOME */
+
+.welcome {
+  padding: 15px 28px 0;
+}
+
+.welcome h2 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.welcome p {
+  margin-top: 0;
+  color: #5d574c;
+  font-size: 16px;
+}
+
+.art-pattern {
+  margin-top: 20px;
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 8px;
+}
+
+/* CONTENT */
+
+.dashboard-content {
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+
+.dashboard-card {
+  min-height: 190px;
+  border-radius: 22px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 12px;
+  font-size: 25px;
+}
+
+.dashboard-card p {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/* CARD COLORS */
+
+.add-product {
+  background: #dfeee3;
+  border: 1px solid #b9d1be;
+}
+
+.add-product h3 {
+  color: #275f36;
+}
+
+.balance {
+  background: #eee2c8;
+  border: 1px solid #d4c39f;
+}
+
+.balance h3 {
+  color: #685021;
+}
+
+.orders {
+  background: #e8e2ed;
+  border: 1px solid #c8bdd1;
+}
+
+.orders h3 {
+  color: #49316a;
+}
+
+.exhibitions {
+  background: #eadbd5;
+  border: 1px solid #d3bbb1;
+}
+
+.exhibitions h3 {
+  color: #963d2c;
+}
+
+/* BUTTONS */
+
+.dashboard-card button {
+  border: none;
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dashboard-card button span {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.green-btn {
+  background: #24732e;
+  color: white;
+}
+
+.gold-btn {
+  background: #b98716;
+  color: white;
+}
+
+.purple-btn {
+  background: #542d77;
+  color: white;
+}
+
+.red-btn {
+  background: #a93e2d;
+  color: white;
+}
+
+/* BALANCE */
+
+.balance-amount {
+  font-size: 30px;
+  font-weight: bold;
+  color: #161616;
+  margin: 10px 0 18px;
+}
+
+/* IMAGES / PLACEHOLDERS */
+
+.card-image {
+  font-size: 90px;
+  margin-left: 15px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #f8f2e5;
+  border-top: 1px solid #d2c6b0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav-item {
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-item span {
+  font-size: 27px;
+}
+
+.nav-item small {
+  font-size: 12px;
+}
+
+.nav-item.active {
+  color: #7b321f;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .dashboard-header {
+    padding: 14px 15px;
+  }
+
+  .brand h1 {
+    font-size: 19px;
+  }
+
+  .brand p {
+    font-size: 11px;
+  }
+
+  .logo-placeholder {
+    font-size: 32px;
+  }
+
+  .welcome {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .welcome h2 {
+    font-size: 21px;
+  }
+
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .dashboard-card {
+    min-height: 180px;
+    padding: 20px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 21px;
+  }
+
+  .dashboard-card p {
+    font-size: 14px;
+  }
+
+  .card-image {
+    font-size: 65px;
+  }
+
+  .language-btn {
+    padding: 8px 10px;
+  }
+}
