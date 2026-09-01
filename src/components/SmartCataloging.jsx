@@ -95,9 +95,12 @@ function SmartCataloging() {
     Next →
   </button>
 
-  <button className="skip-button">
-    Skip
-  </button>
+ <button
+  className="skip-btn"
+  onClick={() => navigate("/artisan-login")}
+>
+  Skip
+</button>
 </div>
 
       </section>

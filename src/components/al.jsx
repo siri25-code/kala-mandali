@@ -1,13 +1,20 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./al.css";
 import logo from "../assets/logo.png";
 
 function ArtisanLogin() {
+
+  const [showOtp, setShowOtp] = useState(false);
+const navigate = useNavigate();
+
+const [otpVerified, setOtpVerified] = useState(false);
+const [name, setName] = useState("");
   return (
     <div className="login-page">
 
       <div className="login-card">
 
-        <div className="top-border"></div>
 
         <img
           src={logo}
@@ -24,10 +31,12 @@ function ArtisanLogin() {
         </p>
 
         <input
-          type="text"
-          placeholder="Enter Your Name"
-          className="login-input"
-        />
+  type="text"
+  placeholder="Enter Your Name"
+  className="login-input"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
 
         <input
           type="tel"
@@ -35,9 +44,41 @@ function ArtisanLogin() {
           className="login-input"
         />
 
-        <button className="otp-btn">
-          Send OTP
-        </button>
+       <button
+  className="otp-btn"
+  onClick={() => setShowOtp(true)}
+>
+  Send OTP
+</button>
+{showOtp && (
+  <>
+   <input
+  type="text"
+  placeholder="Enter OTP"
+  className="login-input otp-input"
+/>
+   <button
+  className="otp-btn"
+  onClick={() => {
+   setOtpVerified(true);
+
+localStorage.setItem("artisanName", name);
+
+setTimeout(() => {
+  navigate("/Dashboard");
+}, 3000);
+  }}
+>
+  Verify OTP
+</button>
+{otpVerified && (
+  <div className="success-message">
+    <div className="tick">✅</div>
+    OTP Verified Successfully
+  </div>
+)}
+  </>
+)}
 
         <p className="signup-text">
           New here? <span>Create Account</span>

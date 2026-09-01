@@ -353,11 +353,11 @@
   gap: 15px;
 }
 
-.skip-button {
-  background: none;
+.skip-btn {
   border: none;
-  color: #7a4314;
-  font-size: 18px;
-  font-weight: 600;
+  background: transparent;
+  color: #713714;
+  font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
 }

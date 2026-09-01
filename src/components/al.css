@@ -16,16 +16,13 @@
 
 /* CARD */
 
-.top-border {
+.login-card {
   width: 380px;
   background: #fffaf5;
   border-radius: 25px;
   border-top: 8px solid #c46a3a;
-
   padding: 35px 30px;
-
   text-align: center;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
@@ -93,29 +90,20 @@
 /* BUTTON */
 
 .otp-btn {
-  width: 100%;
-
-  padding: 15px;
-
+  width: 180px;      /* button width */
+  height: 45px;      /* button height */
   margin-top: 10px;
-
   border: none;
   border-radius: 12px;
-
   background: #c8642f;
-
   color: white;
-
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
 
-  transition: 0.3s;
-}
-
-.otp-btn:hover {
-  background: #b25524;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* CREATE ACCOUNT */
@@ -154,4 +142,18 @@
   .login-subtitle {
     font-size: 16px;
   }
+}
+.otp-input {
+  margin-top: 20px;
+}
+.success-message {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+.tick {
+  font-size: 50px;
+  margin-bottom: 10px;
 }

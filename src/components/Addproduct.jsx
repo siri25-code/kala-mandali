@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Addproduct.css";
-
+import { generateProductDetails } from "./ai";
+import { useLanguage } from "../LanguageContext";
+import { translations } from "../languages";
 const categories = [
   { name: "Pottery", icon: "🏺" },
   { name: "Paintings", icon: "🎨" },
@@ -15,9 +17,17 @@ function Addproduct() {
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1);
+  const { language, setLanguage } = useLanguage();
+
+const t = translations[language];
   const [selectedImage, setSelectedImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
+const [loadingText, setLoadingText] = useState(
+  "🔍 Identifying Product..."
+);
   const [product, setProduct] = useState({
     name: "Handmade Terracotta Pot",
     description:
@@ -50,13 +60,150 @@ function Addproduct() {
   const openCamera = () => {
     document.getElementById("product-camera-input").click();
   };
+const speakText = (text) => {
+  window.speechSynthesis.cancel();
 
+  const speech = new SpeechSynthesisUtterance(text);
+
+  speech.lang = "en-IN";
+
+  window.speechSynthesis.speak(speech);
+};
+
+const startVoiceInputName = () => {
+  const recognition =
+    new window.webkitSpeechRecognition();
+
+  recognition.lang = "en-IN";
+
+  recognition.start();
+
+  recognition.onresult = (event) => {
+    const text = event.results[0][0].transcript;
+
+    setProduct((prev) => ({
+      ...prev,
+      name: text,
+    }));
+  };
+};
+
+const startVoiceInputDescription = () => {
+  const recognition =
+    new window.webkitSpeechRecognition();
+
+  recognition.lang = "en-IN";
+
+  recognition.start();
+
+  recognition.onresult = (event) => {
+    const text = event.results[0][0].transcript;
+
+    setProduct((prev) => ({
+      ...prev,
+      description: text,
+    }));
+  };
+};
+
+const startVoiceInputPrice = () => {
+  const recognition =
+    new window.webkitSpeechRecognition();
+
+  recognition.lang = "en-IN";
+
+  recognition.start();
+
+  recognition.onresult = (event) => {
+    const text = event.results[0][0].transcript;
+
+    setProduct((prev) => ({
+      ...prev,
+      price: text,
+    }));
+  };
+};
   // -----------------------------
   // AI STUDIO
   // -----------------------------
-  const useAIPhoto = () => {
-    setStep(3);
-  };
+ const useAIPhoto = async () => {
+  try {
+    const file = selectedImage;
+
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onloadend = async () => {
+      try {
+        const base64 = reader.result.split(",")[1];
+
+        setLoading(true);
+        setProgress(10);
+        setLoadingText("🔍 Identifying Product...");
+
+       const loadingSteps = [
+  { progress: 15, text: "🔍 Identifying Product..." },
+  { progress: 30, text: "🎨 Detecting Craft Category..." },
+  { progress: 45, text: "📝 Creating Product Name..." },
+  { progress: 60, text: "📖 Writing Description..." },
+  { progress: 75, text: "💰 Estimating Price Range..." },
+  { progress: 90, text: "✨ Finalizing Details..." },
+];
+
+let stepIndex = 0;
+
+const progressTimer = setInterval(() => {
+  if (stepIndex < loadingSteps.length) {
+    setProgress(loadingSteps[stepIndex].progress);
+    setLoadingText(loadingSteps[stepIndex].text);
+    stepIndex++;
+  }
+}, 1200);
+        const aiResponse = await generateProductDetails(base64);
+
+        console.log(aiResponse);
+
+        const name =
+          aiResponse.match(/Name:\s*(.*)/)?.[1] || "";
+
+        const category =
+          aiResponse.match(/Category:\s*(.*)/)?.[1] || "";
+
+        const description =
+          aiResponse.match(/Description:\s*(.*)/)?.[1] || "";
+
+        const price =
+          aiResponse.match(/Price:\s*(.*)/)?.[1] || "";
+
+        setProduct({
+          name,
+          description,
+          price,
+          category,
+        });
+
+        clearInterval(progressTimer);
+
+        setProgress(100);
+        setLoadingText("✅ Done");
+
+        setTimeout(() => {
+          setLoading(false);
+          setStep(3);
+        }, 500);
+
+      } catch (error) {
+        setLoading(false);
+        console.error(error);
+      }
+    };
+
+  } catch (error) {
+    setLoading(false);
+    console.error(error);
+  }
+};
 
   // -----------------------------
   // CATEGORY
@@ -125,36 +272,43 @@ function Addproduct() {
     <div className="kp-add-page">
 
       {/* ================= HEADER ================= */}
-      <header className="kp-add-header">
+      {/* ================= HEADER ================= */}
+<header className="kp-add-header">
 
-        <div className="kp-brand" onClick={() => navigate("/dashboard")}>
-          <img src="/src/assets/logo.png" alt="Kala Mandali Logo" />
+  <div
+    className="kp-brand"
+    onClick={() => navigate("/dashboard")}
+  >
+    <img
+      src="/src/assets/logo.png"
+      alt="Kala Mandali Logo"
+    />
 
-          <div>
-            <h2>Kala Mandali</h2>
-            <p>Our Art.. Our Pride</p>
-          </div>
-        </div>
+    <div>
+      <h2>t.Kala Mandali</h2>
+      <p>Our Art.. Our Pride</p>
+    </div>
+  </div>
 
-        <div className="kp-header-actions">
+  <div className="kp-header-actions">
 
-          <select defaultValue="English">
-            <option>English</option>
-            <option>Telugu</option>
-            <option>Hindi</option>
-          </select>
+   <select
+  value={language}
+  onChange={(e) => setLanguage(e.target.value)}
+>
+  <option value="en">English</option>
+  <option value="te">Telugu</option>
+  <option value="hi">Hindi</option>
+</select>
 
-          <button className="kp-sound-btn">🔊</button>
+    <button className="kp-sound-btn">
+      🔊
+    </button>
 
-        </div>
-      </header>
+  </div>
 
-
-      {/* ================= LANGUAGE SIDE LABEL ================= */}
-      <div className="kp-language-label">
-        ENGLISH
-      </div>
-
+</header>
+      
 
       {/* ================= PROGRESS ================= */}
       <div className="kp-progress">
@@ -267,7 +421,7 @@ function Addproduct() {
             <h1>AI Studio</h1>
 
             <p className="kp-subtitle">
-              We enhance your product image
+              AI analyzes your product and generates details
             </p>
 
             <div className="kp-photo-comparison">
@@ -321,12 +475,31 @@ function Addproduct() {
             </div>
 
 
-            <button
-              className="kp-primary-button"
-              onClick={useAIPhoto}
-            >
-              Use AI Enhanced Photo
-            </button>
+     {loading ? (
+  <div className="kp-loading-box">
+
+    <h3>{loadingText}</h3>
+
+    <div className="kp-progress-bar">
+
+      <div
+        className="kp-progress-fill"
+        style={{ width: `${progress}%` }}
+      ></div>
+
+    </div>
+
+    <p>{progress}%</p>
+
+  </div>
+) : (
+ <button
+  className="kp-primary-button"
+  onClick={useAIPhoto}
+>
+  Generate AI Details
+</button>
+)}
 
 
             <div className="kp-tip-box">
@@ -349,7 +522,7 @@ function Addproduct() {
         {step === 3 && (
           <section className="kp-step-container kp-details-step">
 
-            <h1>Product Details</h1>
+         <h1>{t.addProduct}</h1>
 
             <p className="kp-subtitle">
               AI generates details for you
@@ -377,7 +550,16 @@ function Addproduct() {
                     }
                   />
 
-                  <button>🔊</button>
+   <button
+  onClick={startVoiceInputName}
+>
+  🎤
+</button>
+<button
+  onClick={() => speakText(product.name)}
+>
+  🔊
+</button>
 
                 </div>
 
@@ -402,8 +584,17 @@ function Addproduct() {
                       })
                     }
                   />
+<button
+  onClick={startVoiceInputDescription}
+>
+  🎤
+</button>
 
-                  <button>🔊</button>
+<button
+  onClick={() => speakText(product.description)}
+>
+  🔊
+</button>
 
                 </div>
 
@@ -428,9 +619,17 @@ function Addproduct() {
                       })
                     }
                   />
+<button
+  onClick={startVoiceInputPrice}
+>
+  🎤
+</button>
 
-                  <button>🔊</button>
-
+<button
+  onClick={() => speakText(product.price)}
+>
+  🔊
+</button>
                 </div>
 
               </div>

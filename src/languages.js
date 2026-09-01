@@ -1,0 +1,43 @@
+export const translations = {
+  en: {
+    dashboard: "Dashboard",
+    addProduct: "Add Product",
+    orders: "Orders",
+    profile: "Profile",
+    useAI: "Use AI Product Generator",
+    uploadPhoto: "Upload Product Photo",
+    productName: "Product Name",
+    description: "Description",
+    price: "Price",
+    category: "Category",
+    accept: "Accept AI Suggestions",
+  },
+
+  te: {
+    dashboard: "డాష్‌బోర్డ్",
+    addProduct: "ఉత్పత్తి జోడించండి",
+    orders: "ఆర్డర్లు",
+    profile: "ప్రొఫైల్",
+    useAI: "AI ఉత్పత్తి జనరేటర్",
+    uploadPhoto: "ఉత్పత్తి ఫోటో అప్లోడ్ చేయండి",
+    productName: "ఉత్పత్తి పేరు",
+    description: "వివరణ",
+    price: "ధర",
+    category: "వర్గం",
+    accept: "AI సూచనలను అంగీకరించండి",
+  },
+
+  hi: {
+    dashboard: "डैशबोर्ड",
+    addProduct: "उत्पाद जोड़ें",
+    orders: "ऑर्डर",
+    profile: "प्रोफाइल",
+    useAI: "AI उत्पाद जनरेटर",
+    uploadPhoto: "उत्पाद फोटो अपलोड करें",
+    productName: "उत्पाद नाम",
+    description: "विवरण",
+    price: "मूल्य",
+    category: "श्रेणी",
+    accept: "AI सुझाव स्वीकार करें",
+  },
+};
