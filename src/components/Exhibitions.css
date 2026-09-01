@@ -1,0 +1,147 @@
+.exhibitions-page {
+  min-height: 100vh;
+  background: #fffaf0;
+  padding-bottom: 80px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+.exhibitions-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 18px;
+  background: #fffaf0;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.exhibitions-header h1 {
+  margin: 0;
+  color: #65351f;
+  font-size: 22px;
+}
+
+.exhibitions-header p {
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+/* Search */
+
+.search-box {
+  margin: 5px 18px 20px;
+  padding: 12px 15px;
+  background: white;
+  border: 1px solid #e3cfa5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Cards */
+
+.exhibition-list {
+  padding: 0 18px;
+}
+
+.exhibition-card {
+  background: white;
+  border: 1px solid #ead8b2;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(100, 60, 20, 0.08);
+}
+
+.exhibition-image {
+  height: 130px;
+  background: #f4e4c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.exhibition-details {
+  padding: 15px;
+}
+
+.exhibition-details h2 {
+  margin: 0 0 10px;
+  color: #5c321e;
+  font-size: 18px;
+}
+
+.exhibition-details p {
+  margin: 7px 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #e3f1d5;
+  color: #3d7130;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.register-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: #477d36;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  background: white;
+  border-top: 1px solid #e4d5b8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-nav div {
+  text-align: center;
+  font-size: 20px;
+  color: #5c321e;
+}
+
+.bottom-nav span {
+  display: block;
+  font-size: 10px;
+  margin-top: 3px;
+}
