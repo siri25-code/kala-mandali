@@ -1,0 +1,295 @@
+.balance-page {
+  min-height: 100vh;
+  background: #fffaf0;
+  color: #552d1c;
+  font-family: Arial, sans-serif;
+  padding-bottom: 90px;
+}
+
+/* HEADER */
+
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  background: #fffaf0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f4e4bd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+}
+
+.brand h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+.brand p {
+  margin: 3px 0;
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-actions button {
+  border: 1px solid #a97951;
+  background: #fffaf0;
+  border-radius: 22px;
+  padding: 10px 15px;
+  color: #552d1c;
+}
+
+.header-actions .sound {
+  border-radius: 50%;
+  width: 45px;
+  padding: 10px;
+}
+
+/* BALANCE CARD */
+
+.balance-card {
+  margin: 10px 25px 18px;
+  padding: 25px;
+  border: 1px solid #dfc68e;
+  border-radius: 18px;
+  background: #fff7df;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.balance-card h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #512313;
+}
+
+.balance-card p {
+  margin: 8px 0 0;
+  color: #5d554e;
+}
+
+.pot-image {
+  font-size: 90px;
+}
+
+/* BUTTONS */
+
+.balance-actions {
+  display: flex;
+  gap: 15px;
+  margin: 0 25px 25px;
+}
+
+.balance-actions button {
+  flex: 1;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fffaf0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.add-money {
+  border: 1px solid #c99b62;
+  color: #9a3e18;
+}
+
+.withdraw {
+  border: 1px solid #8da57a;
+  color: #42623b;
+}
+
+/* TRANSACTIONS */
+
+.transaction-section {
+  margin: 0 25px;
+}
+
+.transaction-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-title h2 {
+  font-size: 20px;
+}
+
+.transaction-title span {
+  color: #a34e25;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #eadfca;
+  background: #fffdf8;
+}
+
+.transaction-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e8f1df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.transaction-info {
+  flex: 1;
+}
+
+.transaction-info strong {
+  font-size: 15px;
+}
+
+.transaction-info p,
+.transaction-amount p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #706860;
+}
+
+.transaction-amount {
+  text-align: right;
+  color: #4c873d;
+}
+
+.transaction-amount.negative {
+  color: #c52e25;
+}
+
+/* SAFE BOX */
+
+.safe-box,
+.help-box {
+  margin: 20px 25px;
+  padding: 17px;
+  border: 1px solid #e2c98f;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff8e5;
+}
+
+.safe-box div,
+.help-box div {
+  flex: 1;
+}
+
+.safe-box p,
+.help-box p {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+/* HELP */
+
+.help-box {
+  background: #fffdf8;
+}
+
+.help-icon {
+  font-size: 30px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #fffdf8;
+  border-top: 1px solid #ddd0b5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-nav div {
+  text-align: center;
+  font-size: 20px;
+}
+
+.bottom-nav span {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .balance-header {
+    padding: 15px;
+  }
+
+  .brand h2 {
+    font-size: 18px;
+  }
+
+  .brand p {
+    font-size: 10px;
+  }
+
+  .header-actions button:first-child {
+    padding: 8px;
+  }
+
+  .balance-card {
+    margin: 10px 15px;
+    padding: 18px;
+  }
+
+  .balance-card h1 {
+    font-size: 30px;
+  }
+
+  .pot-image {
+    font-size: 60px;
+  }
+
+  .balance-actions {
+    margin: 15px;
+  }
+
+  .transaction-section {
+    margin: 0 15px;
+  }
+
+  .safe-box,
+  .help-box {
+    margin: 15px;
+  }
+}
