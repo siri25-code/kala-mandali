@@ -1,14 +1,59 @@
 import React from "react";
 import "./KalaBalance.css";
 
-function KalaBalance() {
+const transactions = [
+  {
+    icon: "💼",
+    title: "Order Payment Received",
+    sub: "Order #KM1234",
+    amount: "+ ₹1,250.00",
+    date: "24 May 2025",
+    type: "green",
+  },
+  {
+    icon: "🏛️",
+    title: "Exhibition Payout",
+    sub: "Hyderabad Haat",
+    amount: "+ ₹3,500.00",
+    date: "20 May 2025",
+    type: "orange",
+  },
+  {
+    icon: "🛡️",
+    title: "Verification Bonus",
+    sub: "Verified Artisan",
+    amount: "+ ₹500.00",
+    date: "18 May 2025",
+    type: "purple",
+  },
+  {
+    icon: "🛍️",
+    title: "Order Payment",
+    sub: "Order #KM1220",
+    amount: "+ ₹980.00",
+    date: "16 May 2025",
+    type: "yellow",
+  },
+  {
+    icon: "🏦",
+    title: "Withdrawal to Bank",
+    sub: "A/c ending 5678",
+    amount: "- ₹2,000.00",
+    date: "14 May 2025",
+    type: "red",
+  },
+];
+
+export default function KalaBalance() {
   return (
     <div className="balance-page">
 
       {/* Header */}
       <header className="balance-header">
+        <button className="menu-btn">☰</button>
+
         <div className="brand">
-          <div className="brand-logo">🎨</div>
+          <div className="brand-logo">🏺</div>
           <div>
             <h2>Kala Mandali</h2>
             <p>Our Art.. Our Pride</p>
@@ -21,134 +66,115 @@ function KalaBalance() {
         </div>
       </header>
 
-      {/* Balance Card */}
-      <section className="balance-card">
-        <div>
-          <h3>Kala Balance</h3>
-          <h1>₹8,250.00</h1>
-          <p>Available Balance</p>
-        </div>
-
-        <div className="pot-image">
-          🏺
-        </div>
-      </section>
-
-      {/* Buttons */}
-      <div className="balance-actions">
-        <button className="add-money">
-          💰 &nbsp; Add Money
-        </button>
-
-        <button className="withdraw">
-          ⇥ &nbsp; Withdraw
-        </button>
+      {/* Decorative border */}
+      <div className="art-border">
+        ♧ ♡ ♧ ♡ ♧ ♡ ♧ ♡ ♧ ♡ ♧ ♡ ♧
       </div>
 
-      {/* Transactions */}
-      <div className="transaction-section">
-        <div className="transaction-title">
-          <h2>Recent Transactions</h2>
-          <span>View All</span>
+      <main>
+
+        {/* Balance Card */}
+        <section className="balance-card">
+          <div>
+            <p className="balance-title">Kala Balance</p>
+            <h1>₹8,250.00</h1>
+            <p className="available">Available Balance</p>
+          </div>
+
+          <div className="pot">🏺</div>
+          <button className="card-sound">🔊</button>
+        </section>
+
+        {/* Buttons */}
+        <div className="balance-actions">
+          <button className="add-money">
+            💼 <span>Add Money</span>
+          </button>
+
+          <button className="withdraw">
+            ⇥ <span>Withdraw</span>
+          </button>
         </div>
 
-        <Transaction
-          icon="👛"
-          title="Order Payment Received"
-          subtitle="Order #KM1234"
-          amount="+ ₹1,250.00"
-          date="24 May 2025"
-        />
+        {/* Transactions */}
+        <section className="transactions">
+          <div className="transaction-heading">
+            <h2>Recent Transactions</h2>
+            <button>View All</button>
+          </div>
 
-        <Transaction
-          icon="🏛️"
-          title="Exhibition Payout"
-          subtitle="Hyderabad Haat"
-          amount="+ ₹3,500.00"
-          date="20 May 2025"
-        />
+          {transactions.map((item, index) => (
+            <div className="transaction" key={index}>
 
-        <Transaction
-          icon="🛡️"
-          title="Verification Bonus"
-          subtitle="Verified Artisan"
-          amount="+ ₹500.00"
-          date="18 May 2025"
-        />
+              <div className={`transaction-icon ${item.type}`}>
+                {item.icon}
+              </div>
 
-        <Transaction
-          icon="🛍️"
-          title="Order Payment"
-          subtitle="Order #KM1220"
-          amount="+ ₹980.00"
-          date="16 May 2025"
-        />
+              <div className="transaction-info">
+                <h3>{item.title}</h3>
+                <p>{item.sub}</p>
+              </div>
 
-        <Transaction
-          icon="🏦"
-          title="Withdrawal to Bank"
-          subtitle="A/c ending 5678"
-          amount="- ₹2,000.00"
-          date="14 May 2025"
-          negative
-        />
-      </div>
+              <div className="transaction-right">
+                <strong className={
+                  item.amount.startsWith("-") ? "negative" : "positive"
+                }>
+                  {item.amount}
+                </strong>
+                <span>{item.date}</span>
+              </div>
 
-      {/* Safety */}
-      <div className="safe-box">
-        🔐
-        <div>
-          <strong>Your transactions are safe with us!</strong>
-          <p>100% Secure & Trusted</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Security */}
+        <div className="security-box">
+          <div className="security-icon">🔐</div>
+          <div>
+            <h3>Your transactions are safe with us!</h3>
+            <p>100% Secure & Trusted</p>
+          </div>
+          <span>🔊</span>
         </div>
-        <span>🔊</span>
-      </div>
 
-      {/* Help */}
-      <div className="help-box">
-        <span className="help-icon">🎧</span>
-        <div>
-          <strong>Need Help?</strong>
-          <p>Contact our support team</p>
+        {/* Help */}
+        <div className="help-box">
+          <div className="help-icon">🎧</div>
+          <div>
+            <h3>Need Help?</h3>
+            <p>Contact our support team</p>
+          </div>
+          <span>›</span>
         </div>
-        <span>›</span>
-      </div>
 
-      {/* Bottom navigation */}
+      </main>
+
+      {/* Bottom Navigation */}
       <nav className="bottom-nav">
-        <div>🏠<span>Home</span></div>
-        <div>⊕<span>Add Product</span></div>
-        <div>📦<span>Orders</span></div>
-        <div>👤<span>Profile</span></div>
+
+        <div>
+          <span>⌂</span>
+          <p>Home</p>
+        </div>
+
+        <div>
+          <span>＋</span>
+          <p>Add Product</p>
+        </div>
+
+        <div className="active">
+          <span>📦</span>
+          <p>Orders</p>
+        </div>
+
+        <div>
+          <span>♙</span>
+          <p>Profile</p>
+        </div>
+
       </nav>
 
     </div>
   );
 }
-
-function Transaction({
-  icon,
-  title,
-  subtitle,
-  amount,
-  date,
-  negative
-}) {
-  return (
-    <div className="transaction">
-      <div className="transaction-icon">{icon}</div>
-
-      <div className="transaction-info">
-        <strong>{title}</strong>
-        <p>{subtitle}</p>
-      </div>
-
-      <div className={`transaction-amount ${negative ? "negative" : ""}`}>
-        <strong>{amount}</strong>
-        <p>{date}</p>
-      </div>
-    </div>
-  );
-}
-
-export default KalaBalance;
